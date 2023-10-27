@@ -165,7 +165,9 @@ export function Game({ settingsData }: GameProps) {
     ? countryISOMapping[country.code].toLowerCase()
     : "";
   if (!isAprilFools) {
-    iframeSrc = `https://oec.world/en/visualize/embed/tree_map/hs92/export/${country3LetterCode}/all/show/2021/?controls=false&title=false&click=false`;
+    const country3LetterCode = countryISOMapping[country.code].toLowerCase();
+    const oecCode = country.oecCode?.toLowerCase() ?? country3LetterCode;
+    iframeSrc = `https://oec.world/en/visualize/embed/tree_map/hs92/export/${oecCode}/all/show/2021/?controls=false&title=false&click=false`;
     oecLink = `https://oec.world/en/profile/country/${country3LetterCode}`;
   }
 

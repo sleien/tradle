@@ -258,6 +258,7 @@ export interface Country {
   latitude: number;
   longitude: number;
   name: string;
+  oecCode?: string;
 }
 
 export const countries: Country[] = [
@@ -837,7 +838,13 @@ export const countries: Country[] = [
     name: "Trinidad and Tobago",
   },
   { code: "TV", latitude: -7.109535, longitude: 177.64933, name: "Tuvalu" },
-  // { code: "TW", latitude: 23.69781, longitude: 120.960515, name: "Taiwan" },
+  {
+    code: "TW",
+    latitude: 23.69781,
+    longitude: 120.960515,
+    name: "Taiwan",
+    oecCode: "XXB",
+  },
   { code: "TZ", latitude: -6.369028, longitude: 34.888822, name: "Tanzania" },
   { code: "UA", latitude: 48.379433, longitude: 31.16558, name: "Ukraine" },
   { code: "UG", latitude: 1.373333, longitude: 32.290275, name: "Uganda" },
