@@ -105,7 +105,6 @@ export function Game({ settingsData }: GameProps) {
       if (newGuess.distance === 0) {
         setWon(true);
         getIpData();
-        toast.success(t("welldone"), { delay: 2000 });
       }
     },
     [addGuess, country, currentGuess, t, isAprilFools]
@@ -238,6 +237,7 @@ export function Game({ settingsData }: GameProps) {
               settingsData={settingsData}
               hideImageMode={hideImageMode}
               rotationMode={rotationMode}
+              won={guesses[guesses.length - 1]?.distance === 0}
               isAprilFools={isAprilFools}
             />
             <a
