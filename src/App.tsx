@@ -132,12 +132,12 @@ function App() {
           <Game settingsData={settingsData} />
           <footer className="flex justify-center text-sm mt-8 mb-1">
             <a
-              className="underline pl-1"
-              href="https://oec.world"
+              className="text-center underline pl-1 bg-yellow-200 px-1 rounded"
+              href="https://oecworld.threadless.com/mens/t-shirt/regular"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Get more trade data on the OEC! 🌎
+              Buy Tradle Merch! 👕
             </a>
           </footer>
         </div>
