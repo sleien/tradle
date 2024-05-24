@@ -3,7 +3,7 @@ import { DateTime, Interval } from "luxon";
 import CopyToClipboard from "react-copy-to-clipboard";
 import { useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
-import { Modal, Button, Group } from "@mantine/core";
+import { Modal } from "@mantine/core";
 import {
   computeProximityPercent,
   generateSquareCharacters,
@@ -88,7 +88,7 @@ export function Share({
         </h1>
         <h2 className="text-lg font-semibold">Tradle</h2>
         <p className="font-medium mb-2">Puzzle #{dayCount}</p>
-        <div className="flex flex-col mb-6 text-center">
+        <div className="flex flex-col mb-2 text-center">
           {guessesEmojiArray.map((guess: string, i: number) => (
             <div
               key={`${guess}-${i}`}
@@ -98,19 +98,13 @@ export function Share({
             </div>
           ))}
         </div>
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center mb-6">
           <div className="space-x-4">
-            <a
-              href="https://games.oec.world/en/connectrade/"
-              className="p-2 px-4 rounded-lg font-semibold text-white bg-gray-400 hover:bg-gray-600 inline-block"
-            >
-              Play ConnecTrade
-            </a>
             <CopyToClipboard
               text={[
                 title,
                 guessesString,
-                "https://games.oec.world/en/tradle",
+                "https://oec.world/en/games/tradle",
               ].join("\n")}
               onCopy={() => toast(t("copy"))}
               options={{
@@ -123,9 +117,29 @@ export function Share({
             </CopyToClipboard>
           </div>
         </div>
+        <div className="flex justify-center items-center">
+          <div className="space-x-4">
+            <a
+              href="https://oec.world/en/games/connectrade"
+              className="p-2 px-4 rounded-lg font-semibold text-white bg-gray-400 hover:bg-gray-600 inline-block"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Play ConnecTrade
+            </a>
+            <a
+              href="https://oec.world/en/games/pick-5"
+              className="p-2 px-4 rounded-lg font-semibold text-white bg-gray-400 hover:bg-gray-600 inline-block"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Play Pick 5
+            </a>
+          </div>
+        </div>
       </Modal>
       <CopyToClipboard
-        text={[title, guessesString, "https://games.oec.world/en/tradle"].join(
+        text={[title, guessesString, "https://oec.world/en/games/tradle"].join(
           "\n"
         )}
         onCopy={() => toast(t("copy"))}
