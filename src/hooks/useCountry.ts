@@ -11,10 +11,9 @@ export function useCountry(dayString: string): [Country | undefined] {
   const [forcedCountryCode, setForcedCountryCode] = useState("");
 
   useEffect(() => {
-    const randomCountryCode =
-      countriesWithImage[Math.floor(Math.random() * countriesWithImage.length)].code;
+    const randomCountryCode = countriesWithImage[Math.floor(Math.random() * countriesWithImage.length)].code;
     setForcedCountryCode(randomCountryCode);
-  }, [dayString]);
+  });
 
   const country = useMemo(() => {
     const forcedCountry =
